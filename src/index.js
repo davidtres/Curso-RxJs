@@ -1,4 +1,4 @@
-import { Observable, fromEvent } from "rxjs";
+import { Observable, Subject, fromEvent } from "rxjs";
 
 const onKeyDown$ = fromEvent(document, "keydown");
 const letterRows = document.getElementsByClassName("letter-row");
@@ -8,7 +8,7 @@ const insertLetter = {
   next: (event) => {
     const pressedKey = event.key.toUpperCase();
     const BACK = event.keyCode === 8 ?? event.key;
-    if (BACK) {
+    if (BACK && letterIndex > 0) {
       letterIndex--;
       return backLetter(letterRows);
     }
@@ -28,7 +28,7 @@ function backLetter(letterRows) {
 }
 onKeyDown$.subscribe(insertLetter);
 
-// Primer ejecicio
+// Primer ejecicio para entender funcionamiento de Observable
 // const onservableAlfa$ = new Observable(subscriber=>{
 //     subscriber.next(1);
 //     subscriber.next(2);
@@ -48,3 +48,30 @@ onKeyDown$.subscribe(insertLetter);
 //     }
 // }
 // onservableAlfa$.subscribe(observador)
+
+//Ejercicio para entender Observables: Subject
+//Clase https://platzi.com/clases/3233-programacion-reactiva-rxjs/50758-observables-subject/
+
+const numbers$ = new Observable((subscriber) => {
+  subscriber.next(Math.round(Math.random() * 100));
+});
+
+const numbersRandom$ = new Subject();
+
+const observador1 = {
+  next: (number) => {
+    console.log(number);
+  },
+};
+const observador2 = {
+  next: (number) => {
+    console.log(number);
+  },
+};
+
+numbersRandom$.subscribe(observador1);
+numbersRandom$.subscribe(observador2);
+
+numbers$.subscribe(numbersRandom$);
+
+numbersRandom$.next(45);
