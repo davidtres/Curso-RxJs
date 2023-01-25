@@ -1,6 +1,9 @@
-import { Observable, Subject, fromEvent } from "rxjs";
+import { Subject, fromEvent } from "rxjs";
 import WORD_LIST from "./wordsList.json";
-
+// import * as obs from "./../ejercicios/ejericio-observables";
+// import * as subj from "./../ejercicios/ejercicio-subject";
+// import * as fromOf from "./../ejercicios/ejercicio-from-of";
+import * as intervalTime from "./../ejercicios/ejercicio-interval-time";
 const onKeyDown$ = fromEvent(document, "keydown");
 const letterRows = document.getElementsByClassName("letter-row");
 let letterIndex = 0;
@@ -65,50 +68,3 @@ userWinOrLoose$.subscribe(() => {
     letterRowsWinned.children[i].classList.add("letter-green");
   }
 });
-// Primer ejecicio para entender funcionamiento de Observable
-// const onservableAlfa$ = new Observable(subscriber=>{
-//     subscriber.next(1);
-//     subscriber.next(2);
-//     subscriber.complete()
-//     subscriber.next(13);
-//     subscriber.next(a=b);
-//     subscriber.next('Mi primer observador');
-//     subscriber.next({test:true});
-// })
-// const observador = {
-//     next:(value)=>{
-//         console.log(value);
-//     },
-//     complete:()=>{console.log('Observer Completado');},
-//     error:(err)=>{
-//         console.error(err);
-//     }
-// }
-// onservableAlfa$.subscribe(observador)
-
-//Ejercicio para entender Observables: Subject
-//Clase https://platzi.com/clases/3233-programacion-reactiva-rxjs/50758-observables-subject/
-
-// const numbers$ = new Observable((subscriber) => {
-//   subscriber.next(Math.round(Math.random() * 100));
-// });
-
-// const numbersRandom$ = new Subject();
-
-// const observador1 = {
-//   next: (number) => {
-//     console.log(number);
-//   },
-// };
-// const observador2 = {
-//   next: (number) => {
-//     console.log(number);
-//   },
-// };
-
-// numbersRandom$.subscribe(observador1);
-// numbersRandom$.subscribe(observador2);
-
-// numbers$.subscribe(numbersRandom$);
-
-// numbersRandom$.next(45);
