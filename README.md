@@ -33,7 +33,7 @@ Conceptos aplicados:
 - **reduce()**: combina todos los valores emitidos por un observable a través de una función acumuladora.
 
 **MI TOQUE DE VALOR AGREGADO 😎**
-Incluí el uso del operador **fromFetch** para hacer pedido a la API de "greenborn.com.ar" y obtener una palabra al azar de 5 letras y el caso de falla en la petición, se usará una palabra aleatoria del JSON local.
+Incluí el uso del operador **fromFetch** para hacer pedido a la API de "greenborn.com.ar" y obtener una palabra al azar de 5 letras y en caso de falla en la petición, se usará una palabra aleatoria del JSON local.
 
 - url API: https://clientes.api.greenborn.com.ar/public-random-word?c=1&l=5
 
