@@ -2,6 +2,7 @@
 // import * as subj from "./../ejercicios/ejercicio-subject";
 // import * as fromOf from "./../ejercicios/ejercicio-from-of";
 // import * as intervalTime from "./../ejercicios/ejercicio-interval-time";
+import "../public/style.css";
 import { Subject, fromEvent, merge, takeUntil } from "rxjs";
 import { getFetch$ } from "./fromFetch.js";
 
