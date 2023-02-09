@@ -37,4 +37,4 @@ Incluí el uso del operador **fromFetch** para hacer pedido a la API de "greenbo
 
 - url API: https://clientes.api.greenborn.com.ar/public-random-word?c=1&l=5
 
-Visita el DEMO aquí (solo funciona en PC) =>
+**Visita el DEMO aquí (solo funciona en PC) =>** https://davidtres.github.io/Curso-RxJs/
